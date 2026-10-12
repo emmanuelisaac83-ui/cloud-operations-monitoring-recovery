@@ -1,0 +1,13 @@
+# Private keys and credentials
+*.pem
+*.key
+credentials
+.env
+.env.*
+
+# AWS configuration
+.aws/
+
+# Editor and operating system files
+.DS_Store
+.vscode/
