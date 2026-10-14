@@ -63,14 +63,66 @@ Nginx was restarted successfully. The service returned to `active`, and the HTTP
 
 ## Evidence
 
-The lab includes terminal evidence for backup verification, restoration, and incident recovery.
+The following screenshots provide selected evidence from the lab. Supporting technical documentation is available in the `docs/` directory.
 
-The recovery test output was saved on the EC2 instance at:
+### 1. Infrastructure and Access
 
-`~/cloudops-evidence/recovery-test.txt`
+**VPC and subnet configuration**
 
-Additional screenshots and documentation will be maintained in this repository.
+![VPC and subnet association](screenshots/architecture/vpc-subnet-association.png)
 
+**EC2 IAM role permissions**
+
+![EC2 IAM role permissions](screenshots/architecture/cloudops-ec2-role-permissions.png)
+
+**IAM role attached to the EC2 instance**
+
+![EC2 IAM role attachment](screenshots/architecture/ec2-iam-role-attachment.png)
+
+### 2. CloudWatch Monitoring and Alerting
+
+**CloudWatch Agent configuration**
+
+![CloudWatch Agent configuration](screenshots/monitoring/cloudwatch-agent-configuration.png)
+
+**CloudWatch metrics dashboard**
+
+![CloudWatch metrics dashboard](screenshots/monitoring/cloudwatch-metrics-dashboard.png)
+
+**CPU utilisation monitoring**
+
+![CloudWatch CPU utilisation](screenshots/monitoring/cloudwatch-cpu-utilization.png)
+
+**CPU alarm validation**
+
+![CloudWatch alarm created successfully](screenshots/monitoring/cloudwatch-alarm-created-successfully.png)
+
+### 3. Incident Simulation and Recovery
+
+**Nginx outage simulation**
+
+![Nginx outage simulation](screenshots/recovery/nginx-outage-simulation.png)
+
+**Nginx service status check**
+
+![Nginx service status check](screenshots/recovery/nginx-service-status-check.png)
+
+**Recovery test output**
+
+![Recovery test evidence](screenshots/recovery/recovery-test-evidence-output.png)
+
+### 4. Repository Publication
+
+![GitHub repository publication evidence](screenshots/documentation/github-repository-published.png)
+
+### Supporting Technical Documentation
+
+- [Architecture and infrastructure](docs/architecture.md)
+- [Monitoring configuration](docs/monitoring.md)
+- [Incident report](docs/incident-report.md)
+- [Recovery runbook](docs/recovery-runbook.md)
+
+**Evidence note:** This is a practical learning lab. Backup validation used a sample file. Incident recovery was tested by stopping and restarting Nginx and checking its local HTTP response.
 ## Security Considerations
 
 - SSH access was restricted to a specific client IP address.
